@@ -19,6 +19,7 @@ function Product({match}) {
   return (
     <div>
       <h1>{product.title}</h1>
+      <p>{product.description}</p>
       <img src={product.url} alt="car"></img>
     </div>
   )
