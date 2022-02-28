@@ -27,14 +27,14 @@ const handleClick = (product) => {
 
   return (
  
-    <div>
-      <h1>Products</h1>
+    <div className="product-page">
+      <h1>Produkter</h1>
       {products.map((product)=> (
-        <div>
-         <img className="product-img" src={product.url} alt="cars"></img>
-          <p><Link to={`/product/${product.title}`}>{product.title}</Link></p>
+        <div key={product.id} className="product-container">
+          <img className="product-img" src={product.url} alt="cars"></img>
           <p>{product.price} Kr</p>
-          <button onClick={() => handleClick(product)}>Add to cart</button>
+          <Link to={`/product/${product.id}`}><p>{product.title}</p></Link>
+          <button onClick={() => handleClick(product)}>Lägg i varukorg</button>
         </div>
       ))}
     </div>
@@ -46,3 +46,5 @@ const handleClick = (product) => {
 
 
 export default Products
+
+// <p><Link to={`/product/${product.title}`}>{product.title}</Link></p>
