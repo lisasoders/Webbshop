@@ -16,11 +16,15 @@ function Product({match}) {
     setProduct(product)
     console.log(product)
   }
-  return (
-    <div>
+
+
+return (
+    <div className="description">
       <h1>{product.title}</h1>
       <p>{product.description}</p>
-      <img src={product.url} alt="car"></img>
+      <img className="product-img"  src={product.url} alt="car"></img>
+      <p>{product.storage}</p>
+      <button>Lägg till i varukorg</button>
     </div>
   )
 }

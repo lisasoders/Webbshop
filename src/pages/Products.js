@@ -2,7 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+
 function Products() {
+  
 
   const [products, setProducts] = useState([])
 
@@ -18,9 +20,10 @@ function Products() {
 
 useEffect(() => {
   fetchData();
-})
+}, [])
 
-const handleClick = (product) => {
+const toAddCart = (product) => {
+  
   console.log(product)
   
 }
@@ -29,12 +32,13 @@ const handleClick = (product) => {
  
     <div className="product-page">
       <h1>Produkter</h1>
-      {products.map((product)=> (
-        <div key={product.id} className="product-container">
+      {products.map(product=> (
+        <div key={product.id} className="product-card">
+          <h3>{product.title}</h3>
           <img className="product-img" src={product.url} alt="cars"></img>
-          <p>{product.price} Kr</p>
-          <Link to={`/product/${product.id}`}><p>{product.title}</p></Link>
-          <button onClick={() => handleClick(product)}>Lägg i varukorg</button>
+          <p className="product-price" >{product.price} Kr</p>
+          <Link className="car-link" to={`/product/${product.id}`}>Visa produkt</Link>
+          <p className="car-link" to={`/cart/${product.id}`} onClick={() => toAddCart(product)}>Lägg i varukorg</p>
         </div>
       ))}
     </div>
