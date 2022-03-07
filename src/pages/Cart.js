@@ -1,9 +1,13 @@
 import React from 'react';
 import {useCart,  useDispatchCart} from "../components/Cart";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom'
+
 
 
 const CartItem = ({ product, index, handleRemove}) => {
   return (
+    <Style>
     <div href="#0">
       <div>
         <img className="product-img" src={product.url} alt="cars"></img>
@@ -19,6 +23,7 @@ const CartItem = ({ product, index, handleRemove}) => {
         {/* <button onClick={() => handleRemove(index)}>Remove from cart</button> */}
       </div>
     </div>
+    </Style>
   )
 }
   
@@ -26,6 +31,10 @@ export default function Cart() {
   const product = useCart();
   const dispatch = useDispatchCart();
   const totalPrice = product.reduce((total, b) => total + b.price, 0);
+  const toCheckout = (product) => {
+    dispatch({ type: "ADD", product });
+    console.log(product);
+  }
 
 
  /*  const handleRemove = (index) => {
@@ -35,12 +44,15 @@ export default function Cart() {
 
 if (product.length === 0) {
   return (
+    <Style>
     <main>
       <p> Cart is Empty </p>
     </main>
+    </Style>
   );
 }
 return (
+  <Style>
   <main>
     <p>
        total pris: {" "}
@@ -55,5 +67,11 @@ return (
         />
     ))}
   </main>
+  <Link to="/checkout"><button onClick={() => toCheckout()}>Checkout</button></Link>
+
+  </Style>
 );
 }
+
+const Style = styled.div`
+color: black;`

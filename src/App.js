@@ -8,9 +8,8 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { useState, useEffect } from 'react'
 
-function App(props) {
+function App() {
 
   return (
     <Router>
@@ -21,6 +20,7 @@ function App(props) {
         <Route path='/cart' exact component={Cart}/>
         <Products />
         <Cart />
+        <Route path='/checkout' exact component={Checkout}/>
         <Checkout />
         </Switch>
         {/* <Footer /> */}

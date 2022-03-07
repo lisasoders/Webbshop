@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import { useCart } from "./Cart";
 import { BiCartAlt } from "react-icons/bi";
+import Cart from '../pages/Cart';
 
 
 function Header (){
@@ -14,7 +15,7 @@ function Header (){
         <h1>Hemsida</h1>
     <div>
       <Link to="/">Hemsida</Link> | 
-      <Link classmName="cartStore" to="/cart"><BiCartAlt className="cart-icon"/>({products.length})
+      <Link classmName="dropdown" to="/cart"><BiCartAlt className="cart-icon"/>({products.length}{Cart.js})
       </Link>
       </div>
       </div>
