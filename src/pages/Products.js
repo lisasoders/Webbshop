@@ -36,7 +36,7 @@ const toAddCart = (product) => {
       {products.map((product)=> (
           <div key={product.id} className="product-container">
             <img className="product-img" src={product.url} alt="cars"></img>
-             <p>{product.price} Kr</p>
+             <p>{product.price}Kr</p>
             <Link to={`/product/${product.id}`}><p>{product.title}</p></Link>
              <button onClick={() => toAddCart(product)}>Lägg i varukorg</button>
            </div>

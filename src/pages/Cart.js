@@ -11,12 +11,9 @@ const CartItem = ({ product, index, handleRemove}) => {
       <div>
         <h1>{product.title}</h1>
         <dl>
-        <dt className="clip">Price</dt>
+        <dt className="clip">Pris</dt>
         <dd className="nummerM10">
-          {/* {product.price.toLocaleString("en", {
-            style: "currency",
-            currency: "kr"
-          })} */}
+          {product.price.toLocaleString("en")}kr
           </dd>
         </dl>
         {/* <button onClick={() => handleRemove(index)}>Remove from cart</button> */}
@@ -31,9 +28,9 @@ export default function Cart() {
   const totalPrice = product.reduce((total, b) => total + b.price, 0);
 
 
-  const handleRemove = (index) => {
+ /*  const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
-  };
+  }; */
 
 
 if (product.length === 0) {
@@ -46,13 +43,8 @@ if (product.length === 0) {
 return (
   <main>
     <p>
-      {/* total price: {" "}
-      {totalPrice.toLocaleString("en", 
-      {
-        style: "currency",
-        currency: "kr"
-      }
-      )} */}
+       total pris: {" "}
+      {totalPrice.toLocaleString("en")} kr
     </p>
     {product.map((product, index) =>(
       <CartItem 
