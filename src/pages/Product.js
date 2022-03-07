@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useDispatchCart } from '../components/Cart';
+
 
 function Product({match}) {
 
@@ -17,6 +19,14 @@ function Product({match}) {
     console.log(product)
   }
 
+  const dispatch = useDispatchCart();
+
+const toAddCart = (product) => {
+  
+  console.log(product);
+  dispatch({ type: "ADD", product });
+  
+}
 
 return (
     <div className="description">
@@ -24,7 +34,7 @@ return (
       <p>{product.description}</p>
       <img className="product-img" src={product.url} alt="car"></img>
       <p>{product.storage}</p>
-      <button>Lägg till i varukorg</button>
+      <button onClick={() => toAddCart(product)}>Lägg till i varukorg</button>
     </div>
   )
 }
