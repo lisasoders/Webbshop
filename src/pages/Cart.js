@@ -1,6 +1,5 @@
 import React from 'react';
 import {useCart,  useDispatchCart} from "../components/Cart";
-import { Link } from 'react-router-dom'
 
 
 const CartItem = ({ product, index, handleRemove}) => {
@@ -14,22 +13,22 @@ const CartItem = ({ product, index, handleRemove}) => {
         <dl>
         <dt className="clip">Price</dt>
         <dd className="nummerM10">
-          {product.price.toLocaleString("en", {
+          {/* {product.price.toLocaleString("en", {
             style: "currency",
-            currency: "KR"
-          })}
+            currency: "kr"
+          })} */}
           </dd>
         </dl>
-        <button onClick={() => handleRemove(index)}>Remove from cart</button>
+        {/* <button onClick={() => handleRemove(index)}>Remove from cart</button> */}
       </div>
     </div>
   )
 }
   
 export default function Cart() {
-  const items = useCart();
+  const product = useCart();
   const dispatch = useDispatchCart();
-  const totalPrice = items.reduce((total, b) => total + b.price, 0);
+  const totalPrice = product.reduce((total, b) => total + b.price, 0);
 
 
   const handleRemove = (index) => {
@@ -37,7 +36,7 @@ export default function Cart() {
   };
 
 
-if (items.lenght === 0) {
+if (product.length === 0) {
   return (
     <main>
       <p> Cart is Empty </p>
@@ -47,19 +46,19 @@ if (items.lenght === 0) {
 return (
   <main>
     <p>
-      total price: {" "}
+      {/* total price: {" "}
       {totalPrice.toLocaleString("en", 
       {
         style: "currency",
         currency: "kr"
       }
-      )}
+      )} */}
     </p>
-    {items.map((item, index) =>(
+    {product.map((product, index) =>(
       <CartItem 
-      handleRemove={handleRemove}
+      // handleRemove={handleRemove}
       key={index}
-      product={item}
+      product={product}
       index={index}
         />
     ))}

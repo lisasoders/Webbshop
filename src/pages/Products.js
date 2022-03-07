@@ -5,7 +5,7 @@ import { useDispatchCart } from '../components/Cart';
 
 function Products() {
   
-  const [products,  setProducts] = useState([])
+  const [products, setProducts] = useState([])
 
   const fetchData = async () => {
     try{

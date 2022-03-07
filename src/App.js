@@ -8,21 +8,22 @@ import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
+function App(props) {
 
-function App() {
   return (
     <Router>
       <div className="App">
         <Header />
         <Switch>
-        <Route path="/product/:id" exact pages={Product} />
-        <Route path='/cart'/>
+        <Route path="/product/:id" exact component={Product} />
+        <Route path='/cart' exact component={Cart}/>
         <Products />
         <Cart />
         <Checkout />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
 
         
       </div>

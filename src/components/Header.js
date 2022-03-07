@@ -2,10 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import { useCart } from "./Cart";
+import { BiCartAlt } from "react-icons/bi";
 
 
 function Header (){
-  const items = useCart();
+  const products = useCart();
 
   return (
     <Style>
@@ -13,7 +14,7 @@ function Header (){
         <h1>Hemsida</h1>
     <div>
       <Link to="/">Hemsida</Link> | 
-      <Link classmName="cartStore" to="/Cart"> Varukorg ({items.length})
+      <Link classmName="cartStore" to="/cart"><BiCartAlt className="cart-icon"/>({products.length})
       </Link>
       </div>
       </div>
