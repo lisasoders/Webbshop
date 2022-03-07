@@ -3,23 +3,29 @@ import styled from 'styled-components'
 import Cart from './Cart'
 import { Link } from 'react-router-dom'
 import { BiCartAlt } from "react-icons/bi";
+import { Route} from 'react-router-dom'
 
 
 
 
-
-function Header() {
+function Header({items, setItems}) {
 
   
   return (
+    <div>
     <Style>
       <div>
-        <h1>Hemsida</h1>
-        <Link  to="/cart/"><BiCartAlt className="cart-icon" /></Link>
+        <h1>Car shop</h1>
+        <nav className="nav-menu">
+        <Link to="/">Produkter</Link>
+        <Link  className="cart-icon" to="/cart/"><BiCartAlt  /></Link>
+        </nav>
       </div>
-      
-     <Cart />
     </Style>
+    <div>
+     <Route path="/cart"> <Cart items={items} setItems={setItems}/></Route>
+     </div>
+     </div>
   )
 }
 
@@ -27,7 +33,7 @@ function Header() {
 const Style = styled.div`
 padding: 1px;
 text-align: center;
-background: #D3D3D3;
-color: black;
+background: black;
+color: white
 `
 export default Header

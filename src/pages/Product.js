@@ -19,12 +19,14 @@ function Product({match}) {
 
 
 return (
-    <div className="description">
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-      <img className="product-img"  src={product.url} alt="car"></img>
-      <p>{product.storage}</p>
-      <button>Lägg till i varukorg</button>
+    <div className="description-container">
+      <div className="description-product">
+        <h1>{product.title}</h1>
+        <img className="product-img"  src={product.url} alt="car"></img>
+        <p>{product.description}</p>
+        <p>I lager: {product.storage}</p>
+        <button>Lägg till i varukorg</button>
+      </div>
     </div>
   )
 }

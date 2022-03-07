@@ -4,21 +4,30 @@ import Products from './pages/Products';
 import Header from './components/Header';
 import Product from './pages/Product';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
-function App() {
+function App(products) {
   
+const [items, setItems] = useState([])
+const addProduct= (addItems) =>{
 
+
+
+setItems([
+  ...items,
+  addItems 
+])
+}
 
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header items={items} setItems={setItems}/>
         <Switch>
           <Route path="/cart"></Route>
           <Route path="/product/:id" exact component={Product} />
-        <Products />
+        <Products addProduct={addProduct}/>
         </Switch>
       </div>
     </Router>
