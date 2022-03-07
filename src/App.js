@@ -12,8 +12,6 @@ function App(products) {
 const [items, setItems] = useState([])
 const addProduct= (addItems) =>{
 
-
-
 setItems([
   ...items,
   addItems 
