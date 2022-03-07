@@ -1,7 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;600&family=Roboto+Serif:ital,wght@0,100;0,600;0,700;1,300;1,400&display=swap');
+
 .product-img {
     width: 200px;
+    margin-bottom: auto;
+}
+
+h1 p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .product-page {
     justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.product-page h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.product-card {
+    text-align: center;
+    box-shadow: 3px 3px 6px grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.product-card:hover {
+    box-shadow: 3px 3px 10px 3px grey;
+}
+
+.addToCartBtn {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(50, 51, 53);
+    padding: 5px!important;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid rgb(8, 8, 8);
+    cursor: pointer;
+    width: 100%;
+}
+
+.showProductBtn {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(50, 51, 53);
+    padding: 5px!important;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 2px solid rgb(8, 8, 8);
+    cursor: pointer;
+}
+
+.car-amount {
+    width: 30px;
+    margin-right: 10px;
+}
+
+
+.nav-menu {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    
+}
+
+.products-link{
+    list-style-type: none;
+}
+
+.cart-icon {
+    position: absolute;
+    right: 10px;
+}
+
+.description-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.description-product {
+    width: 50%;
+  
 }

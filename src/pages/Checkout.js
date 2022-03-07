@@ -1,5 +1,5 @@
 import React from 'react'
-import {useCart} from "../components/Cart";
+// import {useCart} from "../components/Cart";
 
 const CheckoutItem = (product) => {
   return (
@@ -7,16 +7,16 @@ const CheckoutItem = (product) => {
 )} 
 
 export default function Checkout() {
-  const product = useCart();
+  // const product = useCart();
    return (
    <main>
      <p>
-     {product.map((product) =>(
+     {/* {product.map((product) =>(
       <CheckoutItem 
       // handleRemove={handleRemove}
       product={product}
         />    
-      ))}
+      ))} */}
     </p>
    </main>
    

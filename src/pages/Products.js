@@ -1,10 +1,12 @@
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatchCart } from '../components/Cart';
+// import { useDispatchCart } from '../components/Cart';
 
-function Products() {
-  
+// function Products() {
+
+function Products({addProduct}) {  
   const [products, setProducts] = useState([])
 
   const fetchData = async () => {
@@ -21,32 +23,47 @@ useEffect(() => {
   fetchData();
 }, [])
 
-const dispatch = useDispatchCart();
+// const dispatch = useDispatchCart();
+
+// const toAddCart = (product) => {
+  
+//   console.log(product);
+//   dispatch({ type: "ADD", product });
 
 const toAddCart = (product) => {
-  
-  console.log(product);
-  dispatch({ type: "ADD", product });
+  addProduct(product)
+  console.log(product)
   
 }
 
   return (
-    <div className="product-page">
-          <h1>Produkter</h1>
-      {products.map((product)=> (
-          <div key={product.id} className="product-container">
-            <img className="product-img" src={product.url} alt="cars"></img>
-             <p>{product.price}Kr</p>
-            <Link to={`/product/${product.id}`}><p>{product.title}</p></Link>
-             <button onClick={() => toAddCart(product)}>Lägg i varukorg</button>
-           </div>
+    // <div className="product-page">
+    //       <h1>Produkter</h1>
+    //   {products.map((product)=> (
+    //       <div key={product.id} className="product-container">
+    //         <img className="product-img" src={product.url} alt="cars"></img>
+    //          <p>{product.price}Kr</p>
+    //         <Link to={`/product/${product.id}`}><p>{product.title}</p></Link>
+    //          <button onClick={() => toAddCart(product)}>Lägg i varukorg</button>
+    //        </div>
             
-         ))}
+    //      ))}
             
-         </div>
+    //      </div>
     
-   
-   
+     
+    <div className="product-page">
+      <h1>Produkter</h1>
+      {products.map(product=> (
+        <div key={product.id} className="product-card">
+          <h3>{product.title}</h3>
+          <img className="product-img" src={product.url} alt="cars"></img>
+          <p className="product-price" >{product.price} Kr</p>
+          <Link className="showProductBtn" to={`/product/${product.id}`}>Visa produkt</Link>
+          <p className="addToCartBtn" to={`/cart/${product.id}`} onClick={() => toAddCart(product)}>Lägg i varukorg</p>
+        </div>
+      ))}
+    </div>   
   )
 }
 export default Products
@@ -106,8 +123,3 @@ export default Products
    
 //   )
 // }
-
-
-
-
-// <p><Link to={`/product/${product.title}`}>{product.title}</Link></p>
