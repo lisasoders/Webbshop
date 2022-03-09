@@ -1,14 +1,27 @@
 import React from 'react'
+// import {useCart} from "../components/Cart";
 
-
-
-function Checkout() {
+const CheckoutItem = (product) => {
   return (
-    <div>
-    <div>Checkout</div>
-    </div>
+    <img className="product-img" src={product.url} alt="cars"></img>
+)} 
+
+export default function Checkout() {
+  // const product = useCart();
+   return (
+   <main>
+     <p>
+     {/* {product.map((product) =>(
+      <CheckoutItem 
+      // handleRemove={handleRemove}
+      product={product}
+        />    
+      ))} */}
+    </p>
+   </main>
+   
   )
 
 }
 
-export default Checkout
+ 
