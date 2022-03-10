@@ -54,15 +54,19 @@ const toAddCart = (product) => {
      
     <div className="product-page">
       <h1>Produkter</h1>
+      <div className='productCardcontainer'>
       {products.map(product=> (
         <div key={product.id} className="product-card">
           <h3>{product.title}</h3>
           <img className="product-img" src={product.url} alt="cars"></img>
-          <p className="product-price" >{product.price} Kr</p>
-          <Link className="showProductBtn" to={`/product/${product.id}`}>Visa produkt</Link>
+          <p className="product-price" >{product.price.toLocaleString("en")} Kr</p>
+          <div className="cardbuttons">
+          <Link className="showProductBtn" to={`/product/${product.id}`} /* style={{height:"25px"}} */>Visa produkt</Link>
           <p className="addToCartBtn" to={`/cart/${product.id}`} onClick={() => toAddCart(product)}>Lägg i varukorg</p>
+          </div>
         </div>
       ))}
+      </div>
     </div>   
   )
 }

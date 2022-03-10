@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 function Footer() {
   return (
-    <div class="styledFooter">
+    <FooterContainer>
+    <div>
       <ul>
       <FooterInfo>
           <li>
@@ -18,17 +19,23 @@ function Footer() {
         </FooterInfo>
         </ul>
       </div>
+      </FooterContainer>
+
   )
 }
 
 const FooterInfo = styled.footer`
-text-align: center;
-font-size: 2rem;
-background: #D3D3D3;
-color: black;
+
 list-style: none;
-padding: 1,5rem;
+color: white;
+padding: 20px;
+margin: 60px;
+align-items: center;
 }`
 
+const FooterContainer = styled.div
+`
+background: black;
+`
 
 export default Footer

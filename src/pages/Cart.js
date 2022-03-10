@@ -4,6 +4,8 @@
 // import { Link } from 'react-router-dom'
 // import App from '../App';
 
+import { denodeify } from "q"
+
 
 
 // const CartItem = ({ product, index, handleRemove}) => {
@@ -76,5 +78,4 @@
 
 // const Style = styled.div`
 // color: black;`
-
 
