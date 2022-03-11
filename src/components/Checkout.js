@@ -1,5 +1,9 @@
 import React from 'react'
 import { BsTrash } from "react-icons/bs"; 
+import {FaCcMastercard} from 'react-icons/fa'
+import {FaCcVisa} from 'react-icons/fa'
+import {SiAmericanexpress} from 'react-icons/si'
+
 
 // import {useCart} from "../components/Cart";
 
@@ -80,8 +84,8 @@ import { BsTrash } from "react-icons/bs";
               <div class="col-50">
                 <h3>Betalning</h3>
                 <label for="fname">Betalkort</label>
-                <div class="icon-container">
-                 
+                <div className='icon-card'>
+                <FaCcMastercard/><FaCcVisa/><SiAmericanexpress/>
                 </div>
                 <label for="ccnum">Kortnummer</label>
                 <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"></input>

@@ -313,17 +313,11 @@ h1 p {
     text-align: center;
 
     padding: 10px;
-
     border-radius: 5px;
-
     display: flex;
-
     align-items: center;
-
     flex-direction: column-reverse;
-
     justify-content: center;
-
     background-color: white;
 }
 
@@ -405,10 +399,13 @@ h1 p {
     display: block;
   }
   
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
+  .icon-card {
+    margin-top: -20px;
+    padding: 10px 2px;
+    font-size: 40px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
   }
   
   .buttonCheckout {
@@ -444,8 +441,36 @@ h1 p {
   .trashButton:hover{
       color: red;
   }
-  
-  /* Responsive layout */
+
+  /* Footer Layout */
+  footer{
+    width:100%;
+    background-color: black;
+    color:#fff;
+    }
+    
+    .top_footer{
+    padding:2rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    }
+    
+    .top_footer section{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    }
+    
+    .top_footer span{
+    padding:0 1rem;
+    }
+    
+
+
+  /* Responsive Layout */
   @media (max-width: 800px) {
     .row {
       flex-direction: column-reverse;
