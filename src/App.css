@@ -111,6 +111,24 @@ h1 p {
     width: 40%;
 }
 
+.addProductBtn{
+  color: white;
+  background-color: rgb(50, 51, 53);
+  padding: 3px 5px!important;
+  margin: 20px;
+  font-size: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid rgb(8, 8, 8);
+  cursor: pointer;
+  width: 40%;
+}
+
+.addProductBtn:hover{
+  color: black;
+  background-color: white;
+}
+
 .car-amount {
     width: 30px;
     margin-right: 10px;
@@ -331,6 +349,13 @@ h1 p {
     font-weight: bolder;
     font-size: large;
 }
+.addCheckout:hover{
+  background-color: white;
+  color: black;
+
+
+}
+
 
 .checkoutIsEmpty {
     font-weight: bolder;
@@ -468,6 +493,9 @@ h1 p {
     padding:0 1rem;
     }
     
+    .cartEmtpy {
+      text-align: center;
+    }
 
 
   /* Responsive Layout */

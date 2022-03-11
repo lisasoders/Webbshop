@@ -49,7 +49,7 @@ return (
         <img className="product-img"  src={product.url} alt="car"></img>
         <p>{product.description}</p>
         <p>I lager: {product.storage}</p>
-        <button onClick={() => toAddCart(product)}>Lägg till i varukorg</button>
+        <button className="addProductBtn" onClick={() => toAddCart(product)}>Lägg till i varukorg</button>
       </div>
     </div>
   )
