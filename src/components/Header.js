@@ -15,7 +15,7 @@ import styled from 'styled-components';
 
 
 
-function Header({items, setItems}) {
+function Header({items, setItems, addProduct}) {
 
   // const itemCount = items.reduce((quantity, items) => {
   //   return quantity + +items.quantity;
@@ -60,7 +60,7 @@ function Header({items, setItems}) {
         </nav>
       </div>
     <div>
-     <Route path="/cart"> <Cart items={items} setItems={setItems}/>
+     <Route path="/cart"> <Cart items={items} setItems={setItems} addProduct={addProduct}/>
      </Route>
      </div>
      </>

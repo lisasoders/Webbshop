@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import { useDispatchCart } from '../components/Cart';
 import {motion} from 'framer-motion'
-
 // function Products() {
 
 function Products({addProduct}) {  
@@ -31,12 +30,22 @@ useEffect(() => {
 //   console.log(product);
 //   dispatch({ type: "ADD", product });
 
+
+
 const toAddCart = (product) => {
   addProduct(product)
   console.log(product)
 }
-
-
+// const onChangeProductQuantity = (event) => {
+//   const value = event.target.value;
+//   const valueInt = parseInt(value);
+//   const cloneProducts = [...products];
+// if (value === "") {
+//       cloneProducts[products].quantity = value;
+//     } else if (valueInt > 0 && valueInt < 100) {
+//       cloneProducts[products].quantity = valueInt;
+//     }
+//   }
 
 
 
@@ -67,8 +76,9 @@ const toAddCart = (product) => {
           <p className="product-price" >{product.price.toLocaleString("en")} Kr</p>
           <div className="cardbuttons">
           <Link className="showProductBtn" to={`/product/${product.id}`} /* style={{height:"25px"}} */>Visa produkt</Link>
-          <div>{product.length === 0 && <div>Kassa är tom</div>}</div>
-          <p className="addToCartBtn" to={`/cart/${product.id}`} onClick={() => toAddCart(product)}>Lägg i varukorg</p>
+          <div className="qty">
+    </div>
+          <p className="addToCartBtn" to={`/cart/${product.id}`} onClick={() => addProduct(product)}>Lägg i varukorg</p>
         </div>
         </div>
       ))}

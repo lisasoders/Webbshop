@@ -13,23 +13,29 @@ import { useState } from 'react'
 
 
 function App() {
-  
+
 const [items, setItems] = useState([])
-const addProduct = (product) => {
-  const exist = items.find(x => x.id === product.id)
-  if(exist){
-    setItems(setItems.map(x => x.id === product.id ? {...exist, qty: exist.qty +1} : x 
-      )
-      );
-  } else {
-    setItems([...items, {...product, qty: 1}]);
-  }
-}
-// const addProduct= (addItems) =>{
-//   setItems([
-//     ...items,
-//     addItems, 
-//   ])}
+const addProduct = (addItems) =>{
+  setItems([
+    ...items,
+    addItems, 
+  ])}
+  
+  // const onChangeProductQuantity = (index, event) => {
+  //   const value = event.target.value;
+  //   const valueInt = parseInt(value);
+  //   const cloneProducts = [...items];
+  
+  //   // Minimum quantity is 1, maximum quantity is 100, can left blank to input easily
+  //   if (value === "") {
+  //     cloneProducts[index].quantity = value;
+  //   } else if (valueInt > 0 && valueInt < 100) {
+  //     cloneProducts[index].quantity = valueInt;
+  //   }
+  //   console.log(cloneProducts, items);
+  //   setItems(cloneProducts);
+  // };
+
 
 
   return (
@@ -39,7 +45,7 @@ const addProduct = (product) => {
         <Switch>
         {/* <Route path='/cart' exact component={Cart}/> */}
         {/* <Cart /> */}
-          <Route path="/cart" addProduct={addProduct}></Route>
+          <Route path="/cart" ></Route>
           <Route 
           path="/checkout"
           exact
@@ -49,11 +55,10 @@ const addProduct = (product) => {
             path="/product/:id" 
             exact 
             // component={Product} 
-            render={(props) => <Product {...props} addProduct={addProduct} />}
+            render={(props) => <Product {...props} addProduct={addProduct}/>}
           />
           <Products addProduct={addProduct}/>
         </Switch>
-
       <Footer/>
       </div>
     </Router>

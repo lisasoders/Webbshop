@@ -34,7 +34,7 @@ import { BsTrash } from "react-icons/bs";
 //     )
 
 
-function Cart({ items, setItems}) {
+function Cart({ items, setItems, addProduct, deletedItems}) {
 
   // const deleteAllItems = (items) => {
 
@@ -52,6 +52,10 @@ function Cart({ items, setItems}) {
     //     cloneProducts[items].quantity = valueInt;
     //   }
 
+
+    
+   
+
   const deleteItem = (item) => {
     
    let deletedItems = items.filter(a => a.id !== item.id)
@@ -61,6 +65,8 @@ function Cart({ items, setItems}) {
 
   };
 
+ 
+  
 
   const totalPrice = items.reduce((total, b) => total + b.price, 0); 
 
