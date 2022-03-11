@@ -29,14 +29,12 @@ import React, {useReducer, useContext, createContext} from 'react';
 
 function Cart({items, setItems}) {
 
-  const deleteAllItems = (items) => {
-
-  }
  
   const deleteItem = (item) => {
     
    let deletedItems = items.filter(a => a.id !== item.id)
    setItems(deletedItems)
+   
     console.log(item.id)
    
   }
@@ -49,10 +47,9 @@ function Cart({items, setItems}) {
           <img className="product-img" src={item.url} alt="car"></img>
           <p>{item.price} kr</p>
           <button onClick={() => deleteItem(item)}>Ta bort</button>
-          <button onClick={() => deleteAllItems(items)}>Ta bort allt</button>
         </div>
       ))}
-    
+  
     </div>
   )
 }

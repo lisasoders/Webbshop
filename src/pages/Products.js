@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import { useDispatchCart } from '../components/Cart';
+import {motion} from 'framer-motion'
 
 // function Products() {
 
@@ -36,6 +37,9 @@ const toAddCart = (product) => {
   
 }
 
+
+
+
   return (
     // <div className="product-page">
     //       <h1>Produkter</h1>
@@ -53,7 +57,7 @@ const toAddCart = (product) => {
     
      
     <div className="product-page">
-      <h1>Produkter</h1>
+      <motion.h1 animate={{rotate: 360}}>Produkter</motion.h1>
       <div className="productCardcontainer">
       {products.map(product=> (
         <div key={product.id} className="product-card">
