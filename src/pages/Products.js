@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import { useDispatchCart } from '../components/Cart';
+import {motion} from 'framer-motion'
 
 // function Products() {
 
@@ -33,8 +34,12 @@ useEffect(() => {
 const toAddCart = (product) => {
   addProduct(product)
   console.log(product)
-  
 }
+
+
+
+
+
 
   return (
     // <div className="product-page">
@@ -53,8 +58,8 @@ const toAddCart = (product) => {
     
      
     <div className="product-page">
-      <h1>Produkter</h1>
       <div className='productCardcontainer'>
+      <motion.h1 animate={{rotate: 360}}>Produkter</motion.h1>
       {products.map(product=> (
         <div key={product.id} className="product-card">
           <h3>{product.title}</h3>
@@ -62,8 +67,9 @@ const toAddCart = (product) => {
           <p className="product-price" >{product.price.toLocaleString("en")} Kr</p>
           <div className="cardbuttons">
           <Link className="showProductBtn" to={`/product/${product.id}`} /* style={{height:"25px"}} */>Visa produkt</Link>
+          <div>{product.length === 0 && <div>Kassa är tom</div>}</div>
           <p className="addToCartBtn" to={`/cart/${product.id}`} onClick={() => toAddCart(product)}>Lägg i varukorg</p>
-          </div>
+        </div>
         </div>
       ))}
       </div>

@@ -17,6 +17,27 @@ import styled from 'styled-components';
 
 function Header({items, setItems}) {
 
+  // const itemCount = items.reduce((quantity, items) => {
+  //   return quantity + +items.quantity;
+  // }, 0);
+  // const subTotal = items.reduce((total, product) => {
+  //   return total + items.price * +product.quantity;
+  // }, 0);
+  
+  // const onChangeProductQuantity = (index, event) => {
+  //   const value = event.target.value;
+  //   const valueInt = parseInt(value);
+  //   const cloneProducts = [...items];
+  
+  //   // Minimum quantity is 1, maximum quantity is 100, can left blank to input easily
+  //   if (value === "") {
+  //     cloneProducts[index].quantity = value;
+  //   } else if (valueInt > 0 && valueInt < 100) {
+  //     cloneProducts[index].quantity = valueInt;
+  //   }
+  //   console.log(cloneProducts, items);
+  //   setItems(cloneProducts);
+  // };
 
   return (
     <>
@@ -40,10 +61,8 @@ function Header({items, setItems}) {
       </div>
     <div>
      <Route path="/cart"> <Cart items={items} setItems={setItems}/>
-     
      </Route>
      </div>
-     
      </>
   )
 }

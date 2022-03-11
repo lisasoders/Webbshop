@@ -15,18 +15,22 @@ import { useState } from 'react'
 function App() {
   
 const [items, setItems] = useState([])
-const addProduct= (addItems) =>{
-  setItems([
-    ...items,
-    addItems, 
-  ])
+const addProduct = (product) => {
+  const exist = items.find(x => x.id === product.id)
+  if(exist){
+    setItems(setItems.map(x => x.id === product.id ? {...exist, qty: exist.qty +1} : x 
+      )
+      );
+  } else {
+    setItems([...items, {...product, qty: 1}]);
+  }
+}
+// const addProduct= (addItems) =>{
+//   setItems([
+//     ...items,
+//     addItems, 
+//   ])}
 
-}
-const addCart = (items) => {
-  setItems ([ 
-    ...items,
-])
-}
 
   return (
     <Router>
@@ -35,11 +39,11 @@ const addCart = (items) => {
         <Switch>
         {/* <Route path='/cart' exact component={Cart}/> */}
         {/* <Cart /> */}
-          <Route path="/cart"></Route>
+          <Route path="/cart" addProduct={addProduct}></Route>
           <Route 
           path="/checkout"
           exact
-          render={(props) => <Checkout {...props} items={items} setItems={setItems} />}
+          render={(props) => <Checkout {...props} items={items} setItems={setItems} addProduct={addProduct} />}
           />
           <Route 
             path="/product/:id" 

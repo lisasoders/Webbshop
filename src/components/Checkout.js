@@ -115,6 +115,7 @@ import {SiAmericanexpress} from 'react-icons/si'
             <div key={item.id}>
               <p>{item.title}</p>
               <img className="product-img" src={item.url} alt="car"></img>
+              <p>{item.price} Kr</p>
           <div className='trashButton' onClick={() => deleteItem(item)}><BsTrash /></div>
             </div>
             
@@ -124,6 +125,7 @@ import {SiAmericanexpress} from 'react-icons/si'
            Totalpris: {" "}
           {totalPrice.toLocaleString("en")} kr
           </p>
+          <div>{items.length === 0 && <div>Kassa är tom</div>}</div>
       </div>
     </div>
     

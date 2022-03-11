@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;600&family=Roboto+Serif:ital,wght@0,100;0,600;0,700;1,300;1,400&display=swap');
 
-
-
+/* Header & Products */
 
 .product-img {
 
@@ -44,8 +43,14 @@ h1 p {
     padding-bottom: 50px;
 
     background-color: #f1f1f1;
-
 }
+
+
+@media screen and (min-width: 992px) {
+    .productCardcontainer {
+      width: 72%;
+    }
+  }
 
 .product-page h1 {
 
@@ -77,12 +82,20 @@ h1 p {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    background-color: white;
 }
 
 .product-card:hover {
     box-shadow: 3px 3px 10px 3px grey;
 }
 
+
+.cardbuttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
 
 .addToCartBtn {
     text-decoration: none;
@@ -94,6 +107,7 @@ h1 p {
     font-weight: bold;
     border: 2px solid rgb(8, 8, 8);
     cursor: pointer;
+
     width: 40%;
     margin-bottom: 3px;
 }
@@ -137,15 +151,13 @@ h1 p {
 .nav-menu {
 
     display: flex;
-
     position: relative;
-
     justify-content: flex-end;
-    
     gap: 10px;
-
+    width: 100%;
+    align-items: center;    
+    gap: 10px;
     align-items: center;
-
     padding: 15px;
 
 
@@ -171,11 +183,21 @@ h1 p {
 
 }
 
-.nav-menu h1 {
+/* .nav-menu h1 {
 
     margin: 70px;
     padding: 70px;
 
+=======
+    color: black;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-end; */
+/* } */
+.nav-menu h1 {
+    margin-right: auto;
+    margin-left: 10px
 }
 
 
@@ -279,8 +301,6 @@ h1 p {
 
 
 
-
-
 .description-container {
 
     display: flex;
@@ -317,19 +337,98 @@ h1 p {
 }
 
 
-.headerTop {
+
+/* .headerTop {
     width: 100%;
     background-color: black;
     color: white;
     text-align: center;
+} */
+
+/* Cart Layout */
+* {
+  box-sizing: border-box;
 }
 
 
-/* Otto fixed checkout.js in App.css */
+.chatImg {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.cart-container {
+  width: 50%;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+/* --- HEADER --- */
+
+
+.cart-items {
+  border-top: 1px solid #ddd;
+}
+
+.cart-items > li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-row {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+
+
+.cart-col-left {
+  width: 70%;
+}
+
+.detail {
+  padding: 0 0.5rem;
+  line-height: 2.2rem;
+}
+
+.detail .name {
+  font-size: 1.2rem;
+}
+
+.detail .description {
+  color: #7d7d7d;
+  font-size: 1rem;
+}
+
+.detail .price {
+  font-size: 1.5rem;
+}
+
+
+
+/* --- SMALL SCREEN --- */
+@media all and (max-width: 599px) {
+  .thumbnail img {
+    display: none;
+  }
+  
+  
+}
+
+
+
+/*  checkout Layout */
 
 .itemCart {
     text-align: center;
-
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -345,7 +444,10 @@ h1 p {
     border: 2px solid black;
     border-radius: 20px;
     padding: 10px;
+    display: flex;
+    justify-content: center;    
     background-color: black;
+    margin: 20px;
     font-weight: bolder;
     font-size: large;
 }
@@ -356,15 +458,6 @@ h1 p {
 
 }
 
-
-.checkoutIsEmpty {
-    font-weight: bolder;
-    font-size: large;
-    text-align: center;
-
-}
-
-  
   .row {
     display: -ms-flexbox;
     display: flex;
@@ -459,7 +552,7 @@ h1 p {
   }
 
   .trashButton{
-    padding: 10px;
+    margin: 5px;
     text-decoration: none;
   }
 

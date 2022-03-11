@@ -56,6 +56,7 @@ function Cart({ items, setItems}) {
     
    let deletedItems = items.filter(a => a.id !== item.id)
    setItems(deletedItems)
+   
     console.log(item.id)
 
   };
@@ -64,13 +65,13 @@ function Cart({ items, setItems}) {
   const totalPrice = items.reduce((total, b) => total + b.price, 0); 
 
    
-  // if (items.length === 0) {
-  //   return (
-  //     <>
-  //       <p className='cartEmtpy'> Varukorg är tom </p>
-  //     </>
-  //   );
-  // }
+  if (items.length === 0) {
+    return (
+      <>
+        <p className='cartEmtpy'> Varukorg är tom </p>
+      </>
+    );
+  }
 
   return (
     <section
@@ -82,22 +83,17 @@ function Cart({ items, setItems}) {
               <div className='cart-col-left'>
                 <div className='thumbnail'>
                   <a href="#">
-                  <img src={item.url} alt={item.title}/>
+                  <img className="chatImg" src={item.url} alt={item.title}/>
                   </a>
                 </div>
                 <div className="detail">
                   <div className="name">
-                    <a href="#">{item.title}</a>
+                    <a>{item.title}</a>
                     </div>
                     <div className="cart-description">{item.description}
                     </div>
                     <div className="cart-price">{item.price}
                     </div>
-                    <Link className="addCheckout"to="/checkout/">Kassa</Link>
-                    <p className='TotalPris'>
-                    totalpris: {" "}
-                    {totalPrice.toLocaleString("en")} kr
-                    </p>
               </div>
               </div>
                 <div className='trashButton' onClick={() => deleteItem(item)}><BsTrash />
@@ -106,6 +102,12 @@ function Cart({ items, setItems}) {
           );
         })}
       </ul>
+                    <p className='totalPris'>
+                    totalpris: {" "}
+                    {totalPrice.toLocaleString("en")} kr
+                    </p>
+                    <Link className="addCheckout"to="/checkout/">Kassa</Link>
+
     </section>
   );
     // <div className='checkout-container'>
